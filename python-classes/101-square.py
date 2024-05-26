@@ -1,3 +1,9 @@
+#!/usr/bin/python3
+"""
+Documentation for Square class module
+"""
+
+
 class Square:
     """
     Square class that can calculate area with print property
