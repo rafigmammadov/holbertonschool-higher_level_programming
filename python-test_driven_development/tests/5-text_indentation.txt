@@ -1,0 +1,26 @@
+=======================================
+Test for "5-text_indentation.py" module
+=======================================
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("What is love?")
+What is love?
+<BLANKLINE>
+
+>>> text_indentation("maqnat.the.best.ioc")
+maqnat.
+<BLANKLINE>
+the.
+<BLANKLINE>
+best.
+<BLANKLINE>
+ioc
+
+>>> text_indentation(5)
+Traceback (most recent call last):
+        ...
+TypeError: text must be a string
+
+>>> text_indentation("Zeppelin")
+Zeppelin
