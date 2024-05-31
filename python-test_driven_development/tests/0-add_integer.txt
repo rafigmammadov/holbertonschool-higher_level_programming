@@ -23,12 +23,17 @@ Traceback (most recent call last):
         ...
 TypeError: b must be an integer
 
->>> add_integer(int("dumb"), 3)
+>>> add_integer()
 Traceback (most recent call last):
         ...
-ValueError: invalid literal for int() with base 10: 'dumb'
+TypeError: add_integer() missing 1 required positional argument: 'a'
 
->>> add_integer(float("dumb"), 3)
+>>> add_integer(3, float('inf'))
 Traceback (most recent call last):
         ...
-ValueError: could not convert string to float: 'dumb'
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(62, float('NaN'))
+Traceback (most recent call last):
+        ...
+ValueError: cannot convert float NaN to integer
