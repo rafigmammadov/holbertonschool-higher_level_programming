@@ -43,6 +43,12 @@ class TestsMaxInteger(unittest.TestCase):
         """
         self.assertEqual(max_integer([-1, -2, -3, -4]), -1)
 
+    def test_max_in_the_middle(self):
+        """
+        Test that checks if max integer is in the middle of the list or not
+        """
+        self.assertEqual(max_integer([1, 2, 5, 4, 3]), 5)
+
 
 if __name__ == "__main__":
     unittest.main()
