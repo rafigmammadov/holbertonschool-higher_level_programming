@@ -17,7 +17,8 @@ class MyList(list):
         for i in range(len(sorted_list)):
             for k in range(len(sorted_list) - 1 - i):
                 if sorted_list[k] > sorted_list[k + 1]:
+                    temp = sorted_list[k]
                     sorted_list[k] = sorted_list[k + 1]
-                    sorted_list[k + 1] = sorted_list[k]
+                    sorted_list[k + 1] = temp
 
         print(sorted_list)
