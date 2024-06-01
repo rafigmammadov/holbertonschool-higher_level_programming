@@ -51,9 +51,10 @@ class Rectangle:
 
         rectangle = ""
 
-        for k in range(self.__height):
-            for i in range(self.__width):
+        for _ in range(self.__height):
+            for _ in range(self.__width):
                 rectangle += '#'
             rectangle += '\n'
+        rectangle = rectangle[:-1]
 
         return rectangle
