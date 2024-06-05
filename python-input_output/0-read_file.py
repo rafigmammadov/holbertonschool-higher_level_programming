@@ -10,4 +10,5 @@ def read_file(filename=""):
     """
     with open(filename, 'r', encoding='utf-8') as f:
         file = f.read().splitlines()
-        print(file)
+        for line in file:
+            print(line)
