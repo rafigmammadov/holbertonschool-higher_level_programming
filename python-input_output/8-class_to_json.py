@@ -2,7 +2,6 @@
 """
 Module that contains class_to_json() function
 """
-import json
 
 
 def class_to_json(obj):
@@ -12,4 +11,4 @@ def class_to_json(obj):
     for JSON serialization of an object
     """
 
-    return json.dumps(obj.__dir__)
+    return obj.__dir__
