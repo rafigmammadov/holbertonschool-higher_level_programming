@@ -5,10 +5,10 @@ Module that contains load_from_json_file() function
 import json
 
 
-def load_from_json_file(filename):
+def load_from_json_file(filemame):
     """
     Function that creates an Object from a “JSON file”
     """
 
-    with open(filename, 'r', encoding="utf-8"):
-        json.loads(filename.read())
+    with open(filemame, 'r', encoding="utf-8"):
+        json.loads(filemame.read())
