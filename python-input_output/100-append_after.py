@@ -19,3 +19,4 @@ def append_after(filename="", search_string="", new_string=""):
         file.seek(0)
 
         file.writelines(lines)
+        file.truncate()
