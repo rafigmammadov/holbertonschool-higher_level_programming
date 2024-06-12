@@ -23,10 +23,6 @@ def convert_csv_to_json(filename):
         with open("data.json", mode="w", encoding="utf-8") as f:
             f.write(json.dumps(data, indent=4))
 
-    except FileNotFoundError:
-        print("file not found")
-        return False
-
     except Exception as e:
-        print("The error has been occured")
+        print("An error occured: {}".format(e))
         return False
