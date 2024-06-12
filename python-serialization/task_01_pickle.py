@@ -20,10 +20,17 @@ class CustomObject:
               format(self.name, self.age, self.is_student))
 
     def serialize(self, filename):
-        with open(filename, mode="wb") as f:
-            f.write(pickle.dumps(self))
+        try:
+            with open(filename, mode="wb") as f:
+                f.write(pickle.dumps(self))
+        except Exception as e:
+            print("An error occured: {}".format(e))
 
     @classmethod
     def deserialize(cls, filename):
-        with open(filename, mode="rb") as f:
-            return pickle.loads(f.read())
+        try:
+            with open(filename, mode="rb") as f:
+                return pickle.loads(f.read())
+        except Exception as e:
+            print("An error occured: {}".format(e))
+            return None
