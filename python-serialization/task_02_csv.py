@@ -22,6 +22,7 @@ def convert_csv_to_json(filename):
                 data[key] = rows
         with open("data.json", mode="w", encoding="utf-8") as f:
             f.write(json.dumps(data, indent=4))
+            return True
 
     except FileNotFoundError:
         print(f"File not found: {filename}")
