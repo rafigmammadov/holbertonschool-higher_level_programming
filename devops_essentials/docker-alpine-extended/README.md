@@ -1,0 +1,1 @@
+README.md for docker alpine extended directory
