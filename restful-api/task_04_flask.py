@@ -27,11 +27,11 @@ def status():
 def add_user():
     data = request.json
     if data is None:
-        return jsonify({'error': 'Invalid input'}), 400
+        return jsonify({'error': 'Username is required'}), 400
 
     username = data.get('username')
     if not username:
-        return jsonify({'error': 'Username required'}), 400
+        return jsonify({'error': 'Username is required'}), 400
     
     if username in users:
         return jsonify({'error': 'Username already exists'}), 400
