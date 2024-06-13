@@ -47,7 +47,7 @@ def login():
 @jwt_required()
 def jwt_protected():
     current_user = get_jwt_identity()
-    return "JWT Auth: Access Granted"
+    return "JWT Auth: Access Granted", 200
 
 @app.route('/admin-only', methods=["GET"])
 @jwt_required()
