@@ -10,7 +10,7 @@ def print_stats(total_size, status_code_counts):
     """
     Function that reads stdin line by line and computes metrics
     """
-    print("Total file size: {}".format(total_size))
+    print("File size: {}".format(total_size))
     for code in sorted(status_code_counts):
         print("{}: {}".format(code, status_code_counts[code]))
 
