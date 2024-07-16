@@ -1,9 +1,10 @@
-import os
-
 def generate_invitations(template, attendees):
-    
+    def replace_placeholder(text, placeholder, value):
+        return text.replace(placeholder, str(value) if value is not None else "N/A")
+
     if not isinstance(template, str):
         print("Invalid input type for template")
+        return
     
     if not isinstance(attendees, list) or not all(isinstance(i, dict) for i in attendees):
         print("Invalid input type for attendees")
@@ -18,15 +19,13 @@ def generate_invitations(template, attendees):
         return
     
     for index, attendee in enumerate(attendees, start=1):
-
         personal_invitation = template
+        personal_invitation = replace_placeholder(personal_invitation, "{name}", attendee.get("name"))
+        personal_invitation = replace_placeholder(personal_invitation, "{event_title}", attendee.get("event_title"))
+        personal_invitation = replace_placeholder(personal_invitation, "{event_date}", attendee.get("event_date"))
+        personal_invitation = replace_placeholder(personal_invitation, "{event_location}", attendee.get("event_location"))
         
-        personal_invitation = personal_invitation.replace("{ name }", attendee.get("name", "N/A"))
-        personal_invitation = personal_invitation.replace("{ event_title }", attendee.get("event_title", "N/A"))
-        personal_invitation = personal_invitation.replace("{ event_date }", attendee.get("event_date", "N/A"))
-        personal_invitation = personal_invitation.replace("{ event_location }", attendee.get("event_location", "N/A"))
-        
-        filename = "output_{}.txt".format(index)
+        filename = f"output_{index}.txt"
 
         with open(filename, 'w', encoding="utf-8") as f:
             f.write(personal_invitation)
