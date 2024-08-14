@@ -3,6 +3,7 @@
 Script that contains LockedClass class
 """
 
+
 class LockedClass:
     """
     a class LockedClass with no class or object attribute
